@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": "",
+        "outDir": "../dist/server/",
+        "sourceMap": true,
+        "mapRoot": "./",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es6",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "lib": [
+            "es2016"
+        ]
+    }
+}

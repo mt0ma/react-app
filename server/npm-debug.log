@@ -1,0 +1,48 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Applications/node-v6.11.3-darwin-x64/bin/node',
+1 verbose cli   '/Applications/node-v6.11.3-darwin-x64/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'build-server' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.3
+4 verbose run-script [ 'prebuild-server', 'build-server', 'postbuild-server' ]
+5 info lifecycle react-app@1.0.0~prebuild-server: react-app@1.0.0
+6 silly lifecycle react-app@1.0.0~prebuild-server: no script for prebuild-server, continuing
+7 info lifecycle react-app@1.0.0~build-server: react-app@1.0.0
+8 verbose lifecycle react-app@1.0.0~build-server: unsafe-perm in lifecycle true
+9 verbose lifecycle react-app@1.0.0~build-server: PATH: /Applications/node-v6.11.3-darwin-x64/lib/node_modules/npm/bin/node-gyp-bin:/Users/miruna/Documents/Teads/react-app/node_modules/.bin:/Applications/node-v6.11.3-darwin-x64/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/miruna/Documents/Teads/workspace:/Users/miruna/Documents/Teads/workspace
+10 verbose lifecycle react-app@1.0.0~build-server: CWD: /Users/miruna/Documents/Teads/react-app
+11 silly lifecycle react-app@1.0.0~build-server: Args: [ '-c', 'rimraf ./dist/server && tsc -p server/tsconfig.json' ]
+12 silly lifecycle react-app@1.0.0~build-server: Returned: code: 2  signal: null
+13 info lifecycle react-app@1.0.0~build-server: Failed to exec build-server script
+14 verbose stack Error: react-app@1.0.0 build-server: `rimraf ./dist/server && tsc -p server/tsconfig.json`
+14 verbose stack Exit status 2
+14 verbose stack     at EventEmitter.<anonymous> (/Applications/node-v6.11.3-darwin-x64/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at EventEmitter.emit (events.js:191:7)
+14 verbose stack     at ChildProcess.<anonymous> (/Applications/node-v6.11.3-darwin-x64/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at ChildProcess.emit (events.js:191:7)
+14 verbose stack     at maybeClose (internal/child_process.js:920:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
+15 verbose pkgid react-app@1.0.0
+16 verbose cwd /Users/miruna/Documents/Teads/react-app/server
+17 error Darwin 16.7.0
+18 error argv "/Applications/node-v6.11.3-darwin-x64/bin/node" "/Applications/node-v6.11.3-darwin-x64/bin/npm" "run" "build-server"
+19 error node v6.11.3
+20 error npm  v3.10.10
+21 error code ELIFECYCLE
+22 error react-app@1.0.0 build-server: `rimraf ./dist/server && tsc -p server/tsconfig.json`
+22 error Exit status 2
+23 error Failed at the react-app@1.0.0 build-server script 'rimraf ./dist/server && tsc -p server/tsconfig.json'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the react-app package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     rimraf ./dist/server && tsc -p server/tsconfig.json
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs react-app
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls react-app
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
