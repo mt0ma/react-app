@@ -5,9 +5,18 @@
         "noImplicitAny": true,
         "module": "commonjs",
         "target": "es5",
-        "jsx": "react"
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "types": [
+            "reflect-metadata"
+        ],
+        "lib": [
+            "es2015",
+            "dom"
+        ]
     },
     "include": [
-        "./client/**/*"
+        "./client/**/**/**/*"
     ]
 }

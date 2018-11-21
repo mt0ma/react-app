@@ -1,30 +1,41 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
-const htmlPlugin = new HtmlWebPackPlugin({template: "./client/react-ui/app/index.html"});
+const outputDirectory = 'dist';
 
 module.exports = {
-  entry: "./client/react-ui/app/index.tsx",
-  output: {
-    filename: "bundle.js",
-    path: __dirname + "/dist"
+  entry: {
+    app: ['./client/react-ui/app/App.tsx'],
+    vendor: ['react', 'react-dom']
   },
-  devtool: "source-map",
+  output: {
+    path: path.join(__dirname, outputDirectory),
+    filename: 'js/[name].bundle.js'
+  },
+  devtool: 'source-map',
   resolve: {
-    // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
   module: {
     rules: [
-      { test: /\.(ts|tsx|js|jsx)$/, exclude: /node_modules/, loader: "awesome-typescript-loader"}
+      { 
+        test: /\.(ts|tsx)$/, 
+        exclude: /node_modules/, 
+        loader: 'awesome-typescript-loader'
+      },
+      {enforce: 'pre', test: /\.js$/, loader: 'source-map-loader'}
     ]
   },
-  plugins: [htmlPlugin],
-  // When importing a module whose path matches one of the following, just
-  // assume a corresponding global variable exists and use that instead.
-  // This is important because it allows us to avoid bundling all of our
-  // dependencies, which allows browsers to cache those libraries between builds.
-  externals: {
-      "react": "React",
-      "react-dom": "ReactDOM"
-  }
+  devServer: {
+    port: 3000,
+    open: true,
+    proxy: {
+      '/api': 'http://localhost:3400'
+    }
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './dist/index.html'
+    })
+  ]
 }
